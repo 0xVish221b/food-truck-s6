@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<form>
+    <p>Are you sure you want to delete {{ food_item["name"] }}?</p>
+    <input hidden name="id" value="{{ food_item['id'] }}">
+    <input type="submit" value="Yes" formmethod="POST" formaction="/api/food/delete">
+    <input type="submit" value="No" formaction="/menu">
+</form>
+
+{% endblock %}

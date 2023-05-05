@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block head %} 
+{% endblock %}
+
+{% block body %}
+
+<form method="POST" action="/api/food/add">
+    <label for="item_name">Food item name</label>
+    <input id="item_name" name="item_name" required/>
+    <label for="item_price">Food item price</label>
+    <input id="item_price" name="item_price" required/>
+    <label for="item_pic">Food item pic</label>
+    <input id="item_pic" name="item_pic"/>
+  
+    <input type="submit">
+</form>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+# Python Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+__pycache__/
+
+# Node JS Dependency directories
+node_modules/
+
+# Node JS env directories
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# NPM cache directory 
+.npm
+
+# eslint cache
+.eslintcache
+
+# VS code
+.vscode
+
+# DS_Store
+.DS_Store

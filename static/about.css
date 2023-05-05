@@ -1,0 +1,20 @@
+h1 {
+    text-align: center;
+}
+
+blockquote {
+    text-align: center;
+    max-width: 38%;
+    margin: auto;
+    border: 1px solid black;
+    padding-block: 16px;
+    border-radius: 10px;
+}
+blockquote > p {
+    font-size: 18px;
+}
+blockquote > footer {
+    text-align: right;
+    margin-right: 27px;
+}
+

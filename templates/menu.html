@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block head %} 
+<link rel="stylesheet" href="../static/styles.css">
+{% endblock %}
+
+{% block body %}
+
+
+<ul>
+  <li>
+    <h4>Available Food Items</h4>
+  </li>
+  {% for item in food_items %} 
+    <li>
+      {% if item["image_url"] %}
+        <img src="{{ item['image_url'] }}">
+      {% endif %}
+      <span>
+        {{ item["name"] }} 
+        <br/>
+        ${{ item["price"] }}
+      </span>
+    <div class="links">
+      <a href="/forms/food/edit/{{ item['id'] }}">Edit</a>
+      <a href="/forms/food/delete/{{ item['id'] }}">Delete</a>
+    </div>
+    </li>
+  {% endfor %}
+</ul>
+
+<footer>
+  <a href="/forms/food/add">Add Food Item</a>
+</footer>
+{% endblock %}
