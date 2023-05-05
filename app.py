@@ -1,9 +1,13 @@
 from flask import Flask, render_template, request, redirect, session
-import bcrypt
+import bcrypt, os
 from models import food_module, user_module
+from uuid import uuid4
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'My secret key'
+
+# Use random UUID as a secret key at app startup
+app.config['SECRET_KEY'] = str(uuid4()) 
+# 'My secret key'
 
 
 # Utility route to redirect user to about page instead of throwing an error
@@ -130,4 +134,6 @@ def signup_action():
   new_user.add_user()
   return redirect("/login")
 
-app.run(debug=True, port=5555)
+if __name__ == "__main__":
+  # Configure Port for app deployment from environment
+  app.run(debug=False, port=os.getenv("PORT", default=5000))
