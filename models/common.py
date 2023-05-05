@@ -12,7 +12,7 @@ def sql_read(query, parameters=[]):
     return results
 
 def sql_write(query, parameters=[]):
-    connection = psycopg2.connect(db_env_constant)
+    connection = psycopg2.connect(os.getenv(db_env_constant))
     cursor = connection.cursor()
     cursor.execute(query, parameters)
     connection.commit()
